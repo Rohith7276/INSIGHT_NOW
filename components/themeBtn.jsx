@@ -1,13 +1,11 @@
 
 import Brightness3Icon from '@mui/icons-material/Brightness3';
 import FlareIcon from '@mui/icons-material/Flare';
-import React, { useContext, useState } from 'react'
+import React from 'react'
 import { Switch } from '@mui/material'
 import {useTheme, useThemeUpdate} from '@/app/contexts/themes';
-import { ThemeContext } from '@/app/contexts/themes'
 
-const themeBtn = () => {
-    // const { themeMode } = useState
+const ThemeBtn = () => {
     const themeMode = useTheme()
     const themeUpdate = useThemeUpdate()
 
@@ -25,4 +23,4 @@ const themeBtn = () => {
     )
 }
 
-export default themeBtn
+export default ThemeBtn

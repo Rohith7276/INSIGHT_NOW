@@ -1,11 +1,9 @@
 import React, { useState } from 'react'
 import { useForm } from 'react-hook-form';
-import SignedIn from './signedIn';
 import { useRouter } from 'next/navigation';
-import signedIn from './signedIn';
 import useSource from '@/app/contexts/sources';
 
-const form = () => {
+const SignUp = () => {
     const [UserExist, setUserExist] = useState(false)
     const {
         register,
@@ -81,4 +79,4 @@ const form = () => {
     )
 }
 
-export default form
+export default SignUp

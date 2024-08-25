@@ -15,7 +15,7 @@ import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { useSession, signIn, signOut } from "next-auth/react"
 
-const navbar = () => {
+const Navbar = () => {
     const themeMode = useTheme()
     const search = useRef()
     const { data: session } = useSession();
@@ -263,7 +263,7 @@ const navbar = () => {
                     </div>
                 </div>
             </div>
-            {data.search && <div className='mx-10 flex flex-col gap-3'> <span className='dark:text-white'>Search results for "{data.search}":</span><span className='cursor-pointer text-blue-700 underline' onClick={() => setdata({ ...data, search: "" })}>clear search</span> </div>}
+            {data.search && <div className='mx-10 flex flex-col gap-3'> <span className='dark:text-white'>Search results for &ldquo;{data.search}&ldquo;:</span><span className='cursor-pointer text-blue-700 underline' onClick={() => setdata({ ...data, search: "" })}>clear search</span> </div>}
         </div>
         <div className='fixed hidden z-[99] lg:z-[101] top-[6rem] lg:top-[4rem] shadow-md dark:shadow-sm dark:shadow-gray-600 p-[0.5rem_1.5rem_1rem_1.5rem] gap-12 right-[7rem] lg:right-[19rem] rounded-t-md lg:rounded-t-none rounded-b-lg w-fit bg-white text-black dark:bg-black dark:text-white' ref={categories}>
             <div className='flex flex-col'>
@@ -359,4 +359,4 @@ const navbar = () => {
     )
 }
 
-export default navbar
+export default Navbar

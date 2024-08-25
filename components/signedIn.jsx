@@ -15,7 +15,7 @@ const signedIn = () => {
                             </div>
                             <h1 className='text-2xl px-5 mx-7'>Thank You for joining us, dive into the latest news now!</h1>
                             <a href="\" className='w-fit m-auto '>
-                                <button><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/original/home-icon-vector.jpg" width={"50px"} alt="" /></button>
+                                <button><Image src="https://static.vecteezy.com/system/resources/previews/000/568/450/original/home-icon-vector.jpg" width={50} alt="" /></button>
                             </a>
                         </div>
                     </div>

@@ -1,9 +1,8 @@
 import React, { useState } from 'react'
 import { useRouter } from 'next/navigation';
 import { useForm } from 'react-hook-form'; 
-import useSource from '@/app/contexts/sources';
 
-const form = () => {
+const SignIn = () => {
 
     const [userNotFound, setUserNotFound] = useState(false)
     const router = useRouter()
@@ -45,4 +44,4 @@ const form = () => {
     )
 }
 
-export default form
+export default SignIn

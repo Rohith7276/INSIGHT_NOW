@@ -9,7 +9,7 @@ import { IoHome } from "react-icons/io5";
 import { useSession, signIn, signOut } from "next-auth/react"
 import icon from "../public/icons/1.svg"
 
-const loginTemplate = () => {
+const LoginTemplate = () => {
   const { data: session } = useSession();
   const typedElement = useRef(null);
   const [signUp, setsignUp] = useState(false)
@@ -54,8 +54,8 @@ const loginTemplate = () => {
               <div className='h-[30%] mt-14'>
                 <span className='text-black inline text-center' ref={typedElement} ></span>
               </div>
-              <a href="\" className='w-fit m-auto'><button><img src="https://static.vecteezy.com/system/resources/previews/000/568/450/original/home-icon-vector.jpg" width={"50px"} alt="" /></button></a>
-              {signUp ? <div className='m-auto'><h3 className='inline text-center'>Don't have an account? </h3>
+              <a href="\" className='w-fit m-auto'><button><Image src="https://static.vecteezy.com/system/resources/previews/000/568/450/original/home-icon-vector.jpg" width={50} height={100} alt="" /></button></a>
+              {signUp ? <div className='m-auto'><h3 className='inline text-center'>Don&apos;t have an account? </h3>
                 <a onClick={handleSignUp} className='text-red-700 hover:underline cursor-pointer'>Sign up</a>
               </div> :
                 <div className='m-auto'><h3 className='inline text-center'>Already have an account? </h3>
@@ -67,19 +67,19 @@ const loginTemplate = () => {
               <div className='w-full flex justify-between lg:gap-0  gap-5 flex-col lg:w-3/5 bg-red-600 h-fit p-4 '>
                 <h1 className='text-center block m-auto my-6 gap-5 w-fit text-white  rounded-full px-4 py-2 text-3xl'>Sign In</h1>
                 <div className='flex gap-5 w-full my-4 justify-center '>
-                  <button className='px-4 py-3 rounded-sm bg-white flex items-center  font-serif gap-3' onClick={() => signIn("github")}><img src="https://th.bing.com/th/id/OIP.NGIDdVP6vw9ue_D-mrEVFQHaHa?rs=1&pid=ImgDetMain" width="30px" alt="" />GitHub</button>
+                  <button className='px-4 py-3 rounded-sm bg-white flex items-center  font-serif gap-3' onClick={() => signIn("github")}><Image src="https://th.bing.com/th/id/OIP.NGIDdVP6vw9ue_D-mrEVFQHaHa?rs=1&pid=ImageDetMain" width={50} height={100} alt="" />GitHub</button>
                 </div>
                 <SignIn />
                 <a href="\" className='w-fit lg:hidden m-auto'><button ><IoHome className='fill-white w-6 h-6' /></button></a>
 
-                <div className='m-auto lg:hidden'><h3 className='inline text-center text-white'>Don't have an account? </h3>
+                <div className='m-auto lg:hidden'><h3 className='inline text-center text-white'>Don&apos;t have an account? </h3>
                   <a onClick={handleSignUp} className='text-white underline cursor-pointer'>Sign up</a>
                 </div>
               </div> :
               <div className='w-full flex justify-between lg:gap-1 gap-0  flex-col lg:w-3/5 bg-red-600 h-full p-4 '>
                 <h1 className='text-center block m-auto my-5 gap-5 w-fit text-white  rounded-full px-4 py-2 text-3xl'>Sign Up</h1>
                 <div className='flex gap-5 w-full my-3 justify-center '>
-                  <button className='px-4 py-3 rounded-sm bg-white flex items-center  font-serif gap-3' onClick={() => signIn("github")}><img src="https://th.bing.com/th/id/OIP.NGIDdVP6vw9ue_D-mrEVFQHaHa?rs=1&pid=ImgDetMain" width="30px" alt="" />GitHub</button>
+                  <button className='px-4 py-3 rounded-sm bg-white flex items-center  font-serif gap-3' onClick={() => signIn("github")}><Image src="https://th.bing.com/th/id/OIP.NGIDdVP6vw9ue_D-mrEVFQHaHa?rs=1&pid=ImageDetMain" width={50} height={100} alt="" />GitHub</button>
                 </div>
                 <SignUp />
                 <div className='m-auto lg:hidden items-center flex justify-center flex-col'>
@@ -96,4 +96,4 @@ const loginTemplate = () => {
   )
 }
 
-export default loginTemplate
+export default LoginTemplate

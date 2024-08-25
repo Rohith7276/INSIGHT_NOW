@@ -110,7 +110,7 @@ export default function Home() {
   return (<div ref={body} className="">
     <ThemeProvider>
       <SourceProvider value={{ sources, setData, article, loginName, setName }}>
-          {error? <div className="overflow-hidden w-full h-[100vh] bg-white"> <Image className=' m-auto' src={erroSvg} width={700}></Image> <div className="text-center text-3xl mt-[-9rem] w-full">We will be back soon</div> </div> :
+          {error? <div className="overflow-hidden w-full h-[100vh] bg-white"> <Image className=' m-auto' src={erroSvg} width={700} alt="error"></Image> <div className="text-center text-3xl mt-[-9rem] w-full">We will be back soon</div> </div> :
             <>
               <Navbar />
               <div className="min-h-[37vh]">
@@ -121,7 +121,7 @@ export default function Home() {
                 </div></div> : <>
                   {ShowMore ? <div className="flex w-full shwmr  justify-center items-center">
                     <button onClick={(e) => handleAppendArticles(e)} className="flex mb-4 outline-none hover:scale-105 ease duration-100 justify-center items-center flex-col text-[red] "><FaAnglesDown />Show more</button>
-                  </div> : <div className="dark:text-[red] m-auto w-fit mb-4">You've reached the end of the page.</div>}</>
+                  </div> : <div className="dark:text-[red] m-auto w-fit mb-4">You&apos;ve reached the end of the page.</div>}</>
                 }
               </div>
               <Footer />

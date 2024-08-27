@@ -36,7 +36,6 @@ const Navbar = () => {
     const [value, setValue] = useState(new Date());
     const thirtyDaysBefore = new Date()
     const currentDate = thirtyDaysBefore.getDate()
-    const [loginName, setLoginName] = useState("")
     thirtyDaysBefore.setDate(currentDate - 33)
     const twoDaysBefore = new Date();
     twoDaysBefore.setDate(twoDaysBefore.getDate() - 2);
@@ -58,10 +57,6 @@ const Navbar = () => {
         setData(data)
     }, [data])
 
-    useEffect(() => {
-        let x = localStorage.getItem("username")
-        if (x != "") setLoginName(x)
-    }, [])
 
 
     const handleCategories = () => {
@@ -102,10 +97,6 @@ const Navbar = () => {
             top: document.body.scrollHeight,
             behavior: 'smooth' // Ensures the scrolling is smooth
         });
-    }
-
-    const handleLogout = () => {
-        localStorage.setItem("username", "")
     }
 
     const handleSearch = () => {
@@ -186,8 +177,8 @@ const Navbar = () => {
         })
         //handels bringing back the hidden menu from lg(1024)width
         window.addEventListener('resize', () => {
-            if (window.innerWidth >= 1024) { 
-                menuItems.current.style.display = 'flex'; 
+            if (window.innerWidth >= 1024) {
+                menuItems.current.style.display = 'flex';
             }
         });
     }
@@ -206,7 +197,7 @@ const Navbar = () => {
                 <button onClick={handleCountry} className='hover:text-black dark:hover:text-white flex items-center hover:underline cursor-pointer'>Country</button>
 
                 <button onClick={handleScroll} className='hover:text-black dark:hover:text-white flex items-center hover:underline cursor-pointer'>Contact</button>
-                {(session || loginName) ?
+                {(session) ?
                     <button ref={profilebutton} onClick={() => {
                         if (profileDropdown.current.style.display === "flex") profileDropdown.current.style.display = "none";
                         else profileDropdown.current.style.display = "flex"
@@ -216,19 +207,18 @@ const Navbar = () => {
                                 <FaRegUser /> <FaAngleDown />
                             </button>
                             <div className="fixed hidden z-[101] top-[19rem] lg:top-[4rem] shadow-md dark:shadow-sm dark:shadow-gray-600 p-[0.5rem_1.5rem_1rem_1.5rem] gap-2 cursor-default right-[0rem] flex-col rounded-b-lg min-w-[10rem] rounded-tl-lg lg:rounded-tl-none bg-white text-black dark:bg-black dark:text-white" ref={profileDropdown}>
-                                {loginName && loginName}
-                                {session && session.user.name}
-                                {session ?
-                                    <button onClick={signOut}>Log Out</button>
-                                    :
-                                    <a href="/"><button onClick={() => { handleLogout() }}>Log Out</button></a>
-                                }
+
+                                {session.user.name}
+
+                                <button onClick={signOut}>Log Out</button>
+
+
                             </div>
                         </>
                     </button>
-                    : <a href="/Login">{
-                        <button className='bg-[#af0000] hover:scale-105 text-white px-3 py-1 rounded-full transition-all ease-linear duration-[10ms]'>Log in</button>}
-                    </a>}
+                    :
+                    <button onClick={signIn} className='bg-[#af0000] hover:scale-105 text-white px-3 py-1 rounded-full transition-all ease-linear duration-[10ms]'>Log in</button>}
+
             </div>
         </nav>
         <div className='flex w-full flex-col'>

@@ -14,10 +14,7 @@ export default function Home() {
   const setName = (e)=>{
     setLoginName(e)
   }
-  const [userName, setuserName] = useState("")
-  const setUserName = (user) => {
-    setuserName(user)
-  }
+
 
   const body = useRef()
   const [ShowMore, setShowMore] = useState(false)

@@ -91,7 +91,7 @@ export default function Home() {
     });
     
     getData();
-  }, [sources, fetchNews]);
+  }, [sources]);
   
 
   const handleAppendArticles = async (e) => {

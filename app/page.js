@@ -79,21 +79,24 @@ export default function Home() {
   useEffect(() => {
     const getData = async () => {
       const data = await fetchNews(1);
-      page.current = 2
+      page.current = 2;
       console.log(data);
       setarticle(data.articles || []);
-      if(data) setShowMore(true)
+      if (data) setShowMore(true);
     };
+  
     window.scrollTo({
       top: 0,
       behavior: 'smooth'
     });
+    
     getData();
-  }, [sources]);
+  }, [sources, fetchNews]);
+  
 
   const handleAppendArticles = async (e) => {
     const data = await fetchNews(page.current)
-    console.log(data.articles);
+    // console.log(data.articles);
     if (data.articles) {
       setShowMore(true)
       setarticle((prev) => [...prev, ...data.articles])
